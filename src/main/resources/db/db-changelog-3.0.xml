@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.2" author="daniil.ikol">
+        <createTable tableName="trips">
+            <column name="tId" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(55)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="carType" type="varchar(55)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="carID" type="BIGINT">
+                <constraints nullable="true" foreignKeyName="fk_trip_car" referencedColumnNames="cId" referencedTableName="cars"/>
+            </column>
+            <column name="userId" type="BIGINT" >
+                <constraints nullable="true" foreignKeyName="fk_orders_users" referencedColumnNames="uId" referencedTableName="users" />
+            </column>
+        </createTable>
+        <modifySql dbms="mysql">
+            <append value="ENGINE=INNODB CHARSET=UTF8 COLLATE utf8_unicode_ci"/>
+        </modifySql>
+    </changeSet>
+
+    <changeSet id="1.2.1" author="daniil.ikol">
+        <tagDatabase tag="1.2"/>
+    </changeSet>
+
+</databaseChangeLog>

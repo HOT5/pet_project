@@ -1,0 +1,123 @@
+article, aside, figure, footer, header, nav, section {
+    display: block;
+}
+#nav_bar {
+    clear: left;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #000000;
+    text-align: right;
+}
+#nav_bar ul {
+    margin-bottom: .5em;
+    list-style: none;
+    padding-top: .5em;
+}
+#nav_bar li {
+    display: inline;
+    padding: 0 1.5em;
+    border-left: 2px solid black;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 87.5%;
+    width: 964px;
+    height: 80%;
+    background-color: white;
+    margin: 15px auto;
+    padding: 15px 25px;
+    border: 1px solid black;
+}
+section, aside, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+section, aside {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+section label {
+    float: left;
+    width: 8em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    padding-top: 0.25em;
+}
+section input[type="text"], input[type="email"], input[type="password"] {
+    width: 12em;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+section input[type="submit"] {
+    margin-left: 0.5em;
+}
+br {
+    clear: both;
+}
+#submit {
+    margin-left: 0.5em;
+}
+
+section table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+section th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+section tr:nth-child(even){background-color: #f2f2f2}
+
+section select{
+    background: #c5cace;
+    width: 170px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 33px;
+}
+
+
+
+h1 { font-size: 175%; }
+h2 { font-size: 125%; }
+
+a { font-weight: bold; }
+a:link { color: #310062; }
+a:visited { color: #310062; }
+a:hover, a:focus { color: black; }
+
+ul {
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+li { padding-bottom: 0.25em; }
+
+p { padding-bottom: 0.5em; }
+
+em { font-weight: bold; }
+
+header {
+    padding-bottom: 2em;
+    border-bottom: 2px solid #000000;
+}
+header h1 {
+    color: black;
+}
+
+footer {
+    clear: both;
+    margin-top: 1em;
+    border-top: 2px solid #000000;
+    padding-top: 0.7em;
+}
+footer p {
+    font-size: 80%;
+    text-align: right;
+}

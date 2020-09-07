@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>autobase</display-name>
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>ManagerServlet</servlet-name>
+        <servlet-class>com.epam.rd.controller.ManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerServlet</servlet-name>
+        <url-pattern>/singin</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/logout</url-pattern>
+        <url-pattern>/cars</url-pattern>
+        <url-pattern>/users</url-pattern>
+        <url-pattern>/newtrip</url-pattern>
+        <url-pattern>/trips</url-pattern>
+        <url-pattern>/usertrips</url-pattern>
+        <url-pattern>/closetrip</url-pattern>
+        <url-pattern>/newcar</url-pattern>
+        <url-pattern>/updatecar</url-pattern>
+        <url-pattern>/deletecar</url-pattern>
+        <url-pattern>/setcar</url-pattern>
+        <url-pattern>/setuser</url-pattern>
+        <url-pattern>/setstatus</url-pattern>
+        <url-pattern>/admin</url-pattern>
+        <url-pattern>/user</url-pattern>
+        <url-pattern>/manager</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>messages.messages</param-value>
+    </context-param>
+    <filter>
+        <filter-name>LocaleFilter</filter-name>
+        <filter-class>com.epam.rd.filter.LocaleFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LocaleFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <jsp-config>
+        <taglib>
+            <taglib-uri>taglib</taglib-uri>
+            <taglib-location>/WEB-INF/taginfo/customtag.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/jsp/errors/access-error.jsp</location>
+    </error-page>
+</web-app>
